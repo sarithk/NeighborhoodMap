@@ -1,0 +1,28 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+.main{
+  height:100%;
+  width:100%;
+}
+#map {
+        height: 100%;
+      }
+#search-panel {
+        height:100%;
+        background-color: black;
+        padding: 5px;
+        text-align: left;
+        padding-left: 10px;
+        padding-top: 10px;
+      }
+
+#submit{
+  width: 25%;
+
+}
+#address{
+  width:60%;
+}
