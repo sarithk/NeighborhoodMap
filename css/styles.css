@@ -3,6 +3,12 @@ html, body {
     margin: 0;
     padding: 0;
   }
+li{
+    list-style-type: none;
+    font-weight: 500;
+    margin-top: 5%;
+
+}
 .main{
   height:100%;
   width:100%;
@@ -13,6 +19,7 @@ html, body {
   margin-bottom: 5%;
   height:85%;
 }
+
 #map {
         height: 100%;
       }

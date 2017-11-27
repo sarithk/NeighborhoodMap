@@ -10,6 +10,9 @@ var initialLocations = [
 
 //View Model for the app
 var mapViewModel = function(map) {
+      //Create an observable array
+       locations = ko.observableArray(initialLocations);
+
      //Display initial locations
      //Create a new blank array for initial listing markers
      var markers = [];
@@ -26,7 +29,9 @@ var mapViewModel = function(map) {
         });
      //Push the marker into the markers array defined earlier
        markers.push(marker);
-       console.log(markers.length,marker);
+       //console.log(markers.length,marker);
+
+
    }
     }
 
