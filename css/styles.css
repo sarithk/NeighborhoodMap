@@ -7,6 +7,12 @@ html, body {
   height:100%;
   width:100%;
 }
+.listings{
+  color:white;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  height:85%;
+}
 #map {
         height: 100%;
       }
@@ -21,8 +27,10 @@ html, body {
 
 #submit{
   width: 25%;
+  margin-top: 5%;
 
 }
 #address{
   width:60%;
+  margin-top: 5%;
 }
