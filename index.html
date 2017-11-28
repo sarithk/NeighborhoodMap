@@ -11,8 +11,7 @@
     <!--Knockout JS and app custom JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
     <script src="js/app.js"></script>
-    <script async defer
-     src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBKW7N4Ky8OOLRISMt80Q9ZeRYd4R1sCXw&callback=initMap">
+    <script defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBKW7N4Ky8OOLRISMt80Q9ZeRYd4R1sCXw&callback=initMap" onerror="mapError()">
     </script>
   </head>
 <body>
@@ -30,6 +29,5 @@
 </div>
 <div class="col-md-8" id="map"></div>
 <!--<script type='text/javascript' src='knockout-3.4.2.js'></script>-->
-
 </body>
 </html>

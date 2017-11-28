@@ -31,10 +31,14 @@ var mapViewModel = function(map) {
        markers.push(marker);
        //console.log(markers.length,marker);
 
-
    }
+
     }
 
+//error function to display an alert to user for google map api errors.
+function mapError(){
+  window.alert("Could not load the Google Map");
+}
 
 function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
