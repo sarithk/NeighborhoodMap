@@ -31,7 +31,38 @@ var mapViewModel = function(map) {
        markers.push(marker);
        //console.log(markers.length,marker);
 
-   }
+       //Initialize a google map marker infowindow
+       var infoWindow = new google.maps.InfoWindow();
+
+       //Onclick event for the marker to open an infowindow and bounce animation
+       marker.addListener('click', function(){
+        toggleAnimation(this);
+        populateInfoWindow(this, infoWindow);
+       });
+
+       //Function to toggle animation
+       function toggleAnimation(marker) {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+          setTimeout(function(){ marker.setAnimation(null); }, 1400);  // stop after 2 bounces
+        }
+        }
+
+       //Function to populate the marker infowindow
+       function populateInfoWindow(marker, infowindow){
+        if(infowindow.marker!=marker){
+          infowindow.marker=marker;
+          infoWindow.setContent('<div>'+marker.title+'</div>');
+          infowindow.open(map,marker);
+          infowindow.addListener('closeclick', function(){
+          infowindow.marker = null;
+          });
+        }
+      }
+
+   }//End marker loop
 
     }
 
