@@ -64,7 +64,24 @@ var mapViewModel = function(map) {
 
    }//End marker loop
 
-    }
+//Function to identify the clicked KO place and associate it to a marker
+//Handle exception when no data in markers array or when no matched marker
+      highlightMarker = function (title){
+        if(markers.length>0){
+          markerToHighlight = markers.filter(marker => marker.title == title);
+          if(markerToHighlight.length>0){
+          toggleAnimation(markerToHighlight[0]);
+        }
+        else{
+          console.log("No marker found");
+        }
+        }
+        else{
+          console.log("No marker found");
+        }
+      };
+
+    }//End of view model
 
 //error function to display an alert to user for google map api errors.
 function mapError(){

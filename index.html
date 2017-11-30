@@ -22,7 +22,7 @@
       <input id="submit" type="button" value="Filter">
 <div class="col-md-12 listings">
 <ul data-bind="foreach: locations">
-    <li data-bind="text: title"></li>
+    <li data-bind="text: $data.title, click: highlightMarker($data.title)"></li>
 </ul>
 
 </div>
