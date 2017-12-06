@@ -18,10 +18,10 @@
 <div class="container main">
 <div class="row main">
 <div class="col-md-4" id="search-panel">
-      <input id="address" type="textbox" VALUE="Fremont, CA">
+      <input id="address" type="textbox" VALUE="Fremont, CA" data-bind="textInput: searchText">
       <input id="submit" type="button" value="Filter">
 <div class="col-md-12 listings">
-<ul data-bind="foreach: locations">
+<ul data-bind="foreach: finalLocations">
     <li data-bind="text: $data.title, click: highlightMarker($data.title)"></li>
 </ul>
 

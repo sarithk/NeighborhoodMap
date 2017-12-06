@@ -81,6 +81,24 @@ var mapViewModel = function(map) {
         }
       };
 
+//Initialize KO Observable used in search bar
+searchText =  ko.observable("");
+
+//KO Computed function that uses search text and filters the location list
+finalLocations = ko.computed(function(){
+  var filter = searchText().toLowerCase();
+  if(filter ){
+    return ko.utils.arrayFilter(locations(), function(location) {
+            filteredArray = location.title.toLowerCase().indexOf(filter)>=0;
+            //Set markers to be visible if it matches filter
+            return filteredArray;
+        });
+      }
+  else{
+    return locations();
+  }
+});
+
     }//End of view model
 
 //error function to display an alert to user for google map api errors.
