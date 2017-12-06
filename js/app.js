@@ -61,7 +61,8 @@ var mapViewModel = function(map) {
           });
         }
       }
-
+//Attach the created marker to the corresponding location
+initialLocations[i].marker = marker;
    }//End marker loop
 
 //Function to identify the clicked KO place and associate it to a marker
@@ -89,9 +90,16 @@ finalLocations = ko.computed(function(){
   var filter = searchText().toLowerCase();
   if(filter ){
     return ko.utils.arrayFilter(locations(), function(location) {
-            filteredArray = location.title.toLowerCase().indexOf(filter)>=0;
+            isFiltered = location.title.toLowerCase().indexOf(filter)>=0;
             //Set markers to be visible if it matches filter
-            return filteredArray;
+            if (isFiltered==true)
+                {
+                  //console.log("Visible");
+                  location.marker.setVisible(true);}
+            else{
+              //console.log("Not Visible");
+              location.marker.setVisible(false)};
+            return isFiltered;
         });
       }
   else{
