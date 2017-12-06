@@ -103,6 +103,10 @@ finalLocations = ko.computed(function(){
         });
       }
   else{
+    //Resets all the markers' visbility to true
+    locations().forEach(function(location){
+     location.marker.setVisible(true);
+    });
     return locations();
   }
 });
