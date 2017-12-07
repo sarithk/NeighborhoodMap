@@ -34,6 +34,9 @@ var mapViewModel = function(map) {
        //Initialize a google map marker infowindow
        var infoWindow = new google.maps.InfoWindow();
 
+      //Call the foursquare API through this function to get venue details
+       getLocationDetails(initialLocations[i]);
+
        //Onclick event for the marker to open an infowindow and bounce animation
        marker.addListener('click', function(){
         toggleAnimation(this);
@@ -54,7 +57,8 @@ var mapViewModel = function(map) {
        function populateInfoWindow(marker, infowindow){
         if(infowindow.marker!=marker){
           infowindow.marker=marker;
-          infoWindow.setContent('<div>'+marker.title+'</div>');
+          infoWindow.setContent(marker.content);
+          //infoWindow.setContent('<div>'+marker.title+'</div>');
           infowindow.open(map,marker);
           infowindow.addListener('closeclick', function(){
           infowindow.marker = null;
@@ -111,6 +115,33 @@ finalLocations = ko.computed(function(){
   }
 });
 
+//Function to get location details from foursquare based on venue id
+//Upon reveiving data successfuly, content for infowindow is formatted,
+//Infowindow content if the location's marker is set.
+//In case of any errors, the location's already stored title is set as content.
+function getLocationDetails(location){
+var content="";
+var foursquareURL = "https://api.foursquare.com/v2/venues/"+location.id+"?client_id=DYF04AFYSLBTJJW3LETD0T20KEO1SLAVVI1O2PUNLNC3RI3L&client_secret=OYC3Q12PKHHY5T4UIPWMCLP5J5W1FNBEEVR3PHKYO2JPS3N4&v=20170904";
+$.getJSON(foursquareURL)
+.done(function( data ) {
+       var title = data.response.venue.name;
+       var address = data.response.venue.location.formattedAddress;
+        var formattedAddress = "";
+        for (var i = 0; i < address.length; i++) {
+          formattedAddress += address[i];
+          formattedAddress += (i<(address.length)-1) ? ", ":".";
+       }
+       var url = data.response.venue.url;
+       content = '<h4><font color="green">'+title+'</font></h4>'+
+  '<p>Address: '+formattedAddress+'</p>'+
+  '<p><a href="'+url+'">'+
+            url+'</a></p>';
+      location.marker.content=content;
+    }).fail(function(e) {
+    content='<div>'+location.title+'</div>';
+    location.marker.content=content;
+  });
+};//End of foursquare function
     }//End of view model
 
 //error function to display an alert to user for google map api errors.
