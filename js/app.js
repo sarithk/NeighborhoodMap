@@ -1,11 +1,11 @@
 //Model
 //List of initial locations to be dispalyed on map
 var initialLocations = [
-{title: 'Ardenwood Historic Farm', location:{lat:37.556817, lng:-122.048231}},
-{title: 'Lake Elizabeth Park', location:{lat:37.543634, lng:-121.962885}},
-{title: "Children's Discovery Museum", location:{lat:37.326755, lng:-121.89252}},
-{title: 'Niles Canyon Railway', location:{lat:37.578259, lng:-121.980858}},
-{title: "California's Great America", location:{lat:37.398421, lng:-121.975126}}
+{title: 'Ardenwood Historic Farm', location:{lat:37.556817, lng:-122.048231},id:'4ac7bbfdf964a52075b920e3'},
+{title: 'Lake Elizabeth Park', location:{lat:37.543634, lng:-121.962885},id:'4ade0492f964a520696721e3'},
+{title: "Children's Discovery Museum", location:{lat:37.326755, lng:-121.89252},id:'428a8580f964a52098231fe3'},
+{title: 'Niles Canyon Railway', location:{lat:37.578259, lng:-121.980858},id:'4b3808b8f964a5209b4a25e3'},
+{title: "California's Great America", location:{lat:37.398421, lng:-121.975126},'id':'46ab758cf964a5206d491fe3'}
 ];
 
 //View Model for the app
