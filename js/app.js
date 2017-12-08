@@ -131,11 +131,12 @@ $.getJSON(foursquareURL)
           formattedAddress += address[i];
           formattedAddress += (i<(address.length)-1) ? ", ":".";
        }
-       var url = data.response.venue.url;
+       var url = data.response.venue.url  ? data.response.venue.url : "";
+       var urlText = url == "" ? "URL: Not Available" : url
        content = '<h4><font color="green">'+title+'</font></h4>'+
   '<p>Address: '+formattedAddress+'</p>'+
   '<p><a href="'+url+'">'+
-            url+'</a></p>';
+            urlText+'</a></p>';
       location.marker.content=content;
     }).fail(function(e) {
     content='<div>'+location.title+'</div>';
