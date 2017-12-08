@@ -17,6 +17,9 @@ var mapViewModel = function(map) {
      //Create a new blank array for initial listing markers
      var markers = [];
 
+     //Initialize a google map marker infowindow
+     var infoWindow = new google.maps.InfoWindow();
+
      //Loop through the initial locations
      for ( var i = 0; i < initialLocations.length; i ++ ) {
      //Create a marker for every location
@@ -31,8 +34,6 @@ var mapViewModel = function(map) {
        markers.push(marker);
        //console.log(markers.length,marker);
 
-       //Initialize a google map marker infowindow
-       var infoWindow = new google.maps.InfoWindow();
 
       //Call the foursquare API through this function to get venue details
        getLocationDetails(initialLocations[i]);
@@ -102,6 +103,7 @@ finalLocations = ko.computed(function(){
                   location.marker.setVisible(true);}
             else{
               //console.log("Not Visible");
+              infoWindow.close();
               location.marker.setVisible(false)};
             return isFiltered;
         });
