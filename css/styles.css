@@ -12,6 +12,8 @@ li{
 .main{
   height:100%;
   width:100%;
+  margin:0%;
+  padding:0%;
 }
 .listings{
   color:white;
@@ -38,6 +40,16 @@ li{
 
 }
 #address{
-  width:60%;
+  width:100%;
   margin-top: 5%;
+}
+
+header{
+background-color: black;
+height: 5%;
+}
+
+.header-text{
+  color:white;
+  text-align: center;
 }
