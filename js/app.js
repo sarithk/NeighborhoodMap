@@ -60,11 +60,15 @@ var mapViewModel = function(map) {
           infowindow.marker=marker;
           infoWindow.setContent(marker.content);
           //infoWindow.setContent('<div>'+marker.title+'</div>');
-          infowindow.open(map,marker);
+          //infowindow.open(map,marker);
           infowindow.addListener('closeclick', function(){
           infowindow.marker = null;
           });
         }
+        //Bugfix: Moved out of if condition
+        //Issue: After closing infowindow manually, it does not open until
+        //another marker is clicked and its infowindow opens.
+        infowindow.open(map,marker);
       }
 //Attach the created marker to the corresponding location
 initialLocations[i].marker = marker;
