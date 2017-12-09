@@ -162,4 +162,31 @@ function initMap() {
           center: {lat: 37.54827, lng: -121.988572}
         });
 ko.applyBindings(new mapViewModel(map));
+
+//Responsive layout
+//Hamburger bootstrap glyph button used to resize the map and search panel
+//Google map resize event called as changing css property, class on css was not reflecting map size change
+//jQuery used to manipulate layout changes
+$('#hamburger').click(function () {
+  console.log("visible?");
+   if($('#search-panel').is(':visible'))
+{
+console.log("Is visible");
+$( '#search-panel' ).removeClass( "col-md-4" );
+$( '#search-panel' ).hide();
+$( '#map' ).removeClass( "col-md-8" );
+$( '#map' ).addClass( "col-md-12" );
+$('#map').css("width","100%");
+google.maps.event.trigger(map, "resize");
+
 }
+else{
+  $( '#search-panel' ).show();
+  $( '#map' ).removeClass( "col-md-12" );
+  $( '#map' ).addClass( "col-md-8" );
+  $('#map').css("width","");
+  google.maps.event.trigger(map, 'resize')
+  $( '#search-panel' ).addClass( "col-md-4" );
+}
+});
+}//End of view
