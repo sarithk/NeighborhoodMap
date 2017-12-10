@@ -55,10 +55,12 @@ height: 5%;
   text-align: center;
 }
 
+
 /*Media query for responsive layout considering mobile devices
-Seach panel is hidden*/
+Seach panel is hidden
 @media screen and (max-width: 770px){
     #search-panel{
  display:none;
 }
+*/
 }

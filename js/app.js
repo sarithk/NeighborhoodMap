@@ -172,21 +172,21 @@ $('#hamburger').click(function () {
    if($('#search-panel').is(':visible'))
 {
 console.log("Is visible");
-$( '#search-panel' ).removeClass( "col-md-4" );
+$( '#search-panel' ).removeClass( "col-xs-4" );
 $( '#search-panel' ).hide();
-$( '#map' ).removeClass( "col-md-8" );
-$( '#map' ).addClass( "col-md-12" );
+$( '#map' ).removeClass( "col-xs-8" );
+$( '#map' ).addClass( "col-xs-12" );
 $('#map').css("width","100%");
 google.maps.event.trigger(map, "resize");
 
 }
 else{
   $( '#search-panel' ).show();
-  $( '#map' ).removeClass( "col-md-12" );
-  $( '#map' ).addClass( "col-md-8" );
+  $( '#map' ).removeClass( "col-xs-12" );
+  $( '#map' ).addClass( "col-xs-8" );
   $('#map').css("width","");
   google.maps.event.trigger(map, 'resize')
-  $( '#search-panel' ).addClass( "col-md-4" );
+  $( '#search-panel' ).addClass( "col-xs-4" );
 }
 });
 }//End of view

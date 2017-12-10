@@ -21,16 +21,16 @@
 <span class="header-text">Kids Attactions</span>
 </header>
 <div class="row main">
-<div class="col-md-4" id="search-panel">
+<div class="col-xs-4" id="search-panel">
       <input id="address" type="textbox" placeholder="Filter listed places" data-bind="textInput: searchText">
-<div class="col-md-12 listings">
+<div class="col-xs-12 listings">
 <ul data-bind="foreach: finalLocations">
     <li data-bind="text: $data.title, click: highlightMarker($data.title)"></li>
 </ul>
 
 </div>
 </div>
-<div class="col-md-8" id="map"></div>
+<div class="col-xs-8" id="map"></div>
 </div>
 </div>
 <!--<script type='text/javascript' src='knockout-3.4.2.js'></script>-->
