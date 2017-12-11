@@ -109,6 +109,7 @@ var mapViewModel = function(map) {
     markerToHighlight = markers.filter(marker => marker.title == title);
     if (markerToHighlight.length > 0) {
      toggleAnimation(markerToHighlight[0]);
+     populateInfoWindow(markerToHighlight[0], infoWindow);
     } else {
      console.log('No marker found');
     }
@@ -166,7 +167,7 @@ var mapViewModel = function(map) {
      content = '<h4><font color="green">' + title + '</font></h4>' +  '<p>Address: ' + formattedAddress + '</p>' +  '<p><a href="' + url + '">' +       urlText + '</a></p>';
      location.marker.content = content;
     }).fail(function(e) {
-     content = '<div>' + location.title + '</div>';
+     content = '<h4>'+location.title+'</h4><p>Error: Could not load location details from foursquare API</p>';
      location.marker.content = content;
     });
   }; //End of foursquare function

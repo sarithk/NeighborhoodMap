@@ -1,5 +1,6 @@
 # Neighborhood Map
-A single page application featuring a map of my neighborhood. The page loads with a list of places i.e local attractions for kids and a Google map featuring place markers corresponding to these locations. A search bar is provided to filter out the desired location which also filters the markers. Upon clicking the marker, the location details available at that point i.e name, address and URL are displayed. The page is responsive and for smaller devices, starts off with a map only default display. A glyph hamburger menu button is provided to toggle the look of the page.
+A single page application featuring a map of my neighborhood. The page loads with a list of places i.e local attractions for kids and a Google map featuring place markers corresponding to these locations. A search bar is provided to filter out the desired location which also filters the markers. Upon clicking the listed location or it's marker, the location details available at that point i.e name, address and URL are displayed. The page is responsive and for smaller devices, starts off with a map only default display. A glyph hamburger menu button is provided to toggle the look of the page.
+
 
 ### Contents
 Project files : <br/>
