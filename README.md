@@ -24,7 +24,7 @@ Download the project files and open the index.html in the browser.
 [KnockoutJS](http://knockoutjs.com)</br>
 [BootStrap](http://getbootstrap.com/docs/3.3/css)</br>
 [Google Maps API](https://developers.google.com/maps/documentation/javascript)</br>
-[jQuery Documentation]()</br>
+[jQuery Documentation](http://api.jquery.com)</br>
 [Foursquare API](https://developer.foursquare.com/docs/api/venues/details)</br>
 [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS)</br>
 
