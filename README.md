@@ -1,5 +1,5 @@
 # Neighborhood Map
-A single page application featuring a map of my neighborhood. The page loads with a list of places i.e local attractions for kids and Google map featuring place markers corresponding to these locations. A aseach bar is provided to filter out the desired location which also filters the markers. Upon clicking the marker, the location details available at that point i.e name, address and URL are displayed. The page is responsive and for smaller devices, starts off with a map only default display. A glyph hamburger menu button is provided to toggle the look of the page.
+A single page application featuring a map of my neighborhood. The page loads with a list of places i.e local attractions for kids and a Google map featuring place markers corresponding to these locations. A search bar is provided to filter out the desired location which also filters the markers. Upon clicking the marker, the location details available at that point i.e name, address and URL are displayed. The page is responsive and for smaller devices, starts off with a map only default display. A glyph hamburger menu button is provided to toggle the look of the page.
 
 ### Contents
 Project files : <br/>
@@ -8,11 +8,11 @@ app.js - Javascript file that includes the Knockout's MVVM organization framewor
 styles.css - CSS3 Stylesheet for the page styling.</br>
 
 ### APIs, Frameworks used
-Google Maps API</br>
-Knockout JS</br>
-Bootstrap for CSS</br>
-Foursquare venue details API
-jQuery
+Google Maps API - Javascript API loaded asynchronously for enabling Google map functionality</br>
+Knockout JS - JavaScript library used to create a responsive user interface, dynamic UI and model updates using the MVVM architecture</br>
+Bootstrap for CSS - Framework used for styling the webpage</br>
+Foursquare venue details API - Venue details are fetched asynchronously</br>
+jQuery - Library used for HTML Document Object Model manipulation and asynchronous requests
 
 
 ### Installation
